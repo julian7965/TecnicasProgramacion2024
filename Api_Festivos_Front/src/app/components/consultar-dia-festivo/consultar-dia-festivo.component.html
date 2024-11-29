@@ -1,0 +1,38 @@
+<div style="padding: 20px">
+  <div
+    style="
+      display: flex;
+      flex-direction: row;
+      justify-content: left;
+      align-items: start;
+    "
+  >
+    <mat-form-field>
+      <mat-label>Choose a date</mat-label>
+      <input
+        (dateChange)="handleDateChange($event)"
+        matInput
+        [matDatepicker]="picker"
+      />
+      <mat-hint>MM/DD/YYYY</mat-hint>
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="picker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+
+    {{ fecha }}
+    <section style="margin-left: 15px">
+      <div class="example-button-row">
+        <button (click)="consultarPorFecha()" mat-raised-button color="primary">
+          Consultar
+        </button>
+      </div>
+    </section>
+  </div>
+
+  <div style="margin-top: 20px; padding-left: 20px; padding-right: 20px">
+    <mat-divider></mat-divider>
+  </div>
+</div>
